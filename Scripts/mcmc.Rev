@@ -1,0 +1,72 @@
+################################################################################
+#
+# RevBayes Example: Total-evidence dating under the fossilized birth-death model
+# 
+# This file: Runs the full MCMC ...
+#
+# authors: Tracy A. Heath, Walker C. Pett, April M. Wright
+#
+################################################################################
+clear()
+seed(1)
+#######################
+# Reading in the Data #
+#######################
+# Import the morphological character matrix and define the taxa present#
+morpho <- readDiscreteCharacterData("Data/morph_traits.nex")
+taxa <- morpho.names()
+
+## helpers
+n_taxa <- taxa.size()
+moves = VectorMoves()
+
+## Add fossil data
+fossil_data = readDelimitedDataFile("Data/fossils.csv", separator=",", header=true, rownames=false)
+
+last_j <- 1
+for (i in 1:taxa.size()) {
+    for (j in last_j:fossil_data.size()) {
+        taxon_name = fossil_data[j][1]
+        if (taxa[i].getName() == taxon_name) {
+            min_age = fossil_data[j][2]
+            max_age = fossil_data[j][3]
+            taxa[i] <- taxon(taxon_name, age=min_age, max=max_age)
+            last_j <- j
+            break
+        }
+    }
+}
+
+# Load the model files
+source("Scripts/tree_BD_nodedate.Rev")
+source("Scripts/mk_model_gamma.Rev")
+
+########
+# MCMC #
+########
+
+# initialize the model object #
+mymodel = model(phylogeny)
+
+monitors = VectorMonitors()
+
+# Create a vector of monitors #
+# 1. for the full model #
+monitors.append( mnModel(filename="rev_Output/mk_gamma.log", printgen=10))
+
+# 2. the tree #
+monitors.append( mnFile(filename="rev_Output/mk_gamma.trees", printgen=10, phylogeny))
+
+# 3. and a few select parameters to be printed to the screen #
+#monitors.append( mnScreen(printgen=10, num_samp_anc, origin_time) )
+monitors.append( mnScreen(printgen=100) )
+monitors.append( mnStochasticVariable(filename="output_5/posterior.var",printgen=10) )
+
+# Initialize the MCMC object #
+mymcmc = mcmc(mymodel, monitors, moves)
+
+# Run the MCMC #
+mymcmc.run(generations=100000)
+
+trace = readTreeTrace("rev_Output/mk_gamma.trees")      # Read in the tree trace
+mccTree(trace, file="rev_Output/mk_gamma.mcc.tre" )

@@ -1,0 +1,58 @@
+##################################################################
+# Birth-Death Process prior on the topology and speciation times #
+##################################################################
+
+# Define exponential priors on the birth rate and death rate #
+speciation_rate ~ dnExponential(10)
+extinction_rate ~ dnExponential(10)
+
+# Specify a scale move on the speciation_rate parameter #
+moves.append( mvScale(speciation_rate, lambda=0.5,tune=true,weight=3.0) )
+
+# Specify a scale move on the extinction_rate parameter #
+moves.append( mvScale(extinction_rate, lambda=0.5,tune=true,weight=3.0) )
+
+# Create deterministic nodes for the diversification and turnover rates to monitor these parameters #
+diversification := speciation_rate - extinction_rate
+turnover := extinction_rate/speciation_rate
+
+# Fix the probability of sampling parameter (rho) to 1 #
+# because all extant bears are represented in our analysis #
+rho <- 1.0
+
+# Define min & max constraints for the root #
+# Using the oldest date for the Dirty-water dog and the begining of the century as of 2025
+extant_mrca_min <- 165.0
+extant_mrca_max <- 225.0
+# Specify the root age as a stochastic node drawn from a uniform distribution #
+extant_mrca ~ dnUniform(extant_mrca_min, extant_mrca_max)
+
+moves.append( mvScale(extant_mrca, lambda=1, tune=true, weight=5.0) )
+
+# Fossil sampling rate
+psi ~ dnExponential(10)
+
+moves.append( mvScale(psi, lambda=0.01, weight=1) )
+moves.append( mvScale(psi, lambda=0.1,  weight=1) )
+moves.append( mvScale(psi, lambda=1,    weight=1) )
+
+
+# Define the tree-prior distribution as the birth-death process #
+tree_dist = dnBDSTP(r=0, rootAge=extant_mrca, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
+
+# Define clade constraints #
+my_ingroup    = clade("Papaya_dog", "Papaya_dog_fossil", "Italian_dog", "Italian_dog_fossil", "Half-smoke", "Half-smoke_fossil", "Texas_Tommy", "Texas_Tommy_fossil", "NY_System_wiener", "NY_System_wiener_fossil", "Fenway_Frank", "Fenway_Frank_fossil", "Philly_Combo", "Philly_Combo_fossil", "Baltimore_bologna_dog", "Baltimore_bologna_dog_fossil", "Ripper", "Ripper_fossil", "Texas_wiener", "Texas_wiener_fossil", "Salami_dog", "Crab_mac_n’_cheese_dog", "Crab_mac_n’_cheese_dog_fossil", "Maine_Red_Snapper", "Maine_Red_Snapper_fossil", "Michigan_Red_Hot", "Michigan_Red_Hot_fossil", "Troy_mini_hot_dog", "Troy_mini_hot_dog_fossil", "Slaw_dog", "Slaw_dog_fossil", "Scrambled_dog", "Scrambled_dog_fossil", "Texas_dog", "Texas_dog_fossil", "Memphis_dog", "Chicago_dog", "Chicago_dog_fossil", "Reuben_dog", "Reuben_dog_fossil", "Bagel_dog", "Bagel_dog_fossil", "Polish_Boy", "Polish_Boy_fossil", "Francheezie", "Francheezie_fossil", "Detroit_coney", "Detroit_coney_fossil", "Flint-style_coney", "Flint-style_coney_fossil", "Jackson-style_coney", "Jackson-style_coney_fossil", "Cincinnati_cheese_coney", "Cincinnati_cheese_coney_fossil", "Minnesota_corn_dog", "Minnesota_corn_dog_fossil", "Sonoran", "Sonoran_fossil", "Nevada_naked_dog", "Seattle-style_dog", "Seattle-style_dog_fossil", "Denver_dog", "Danger_dog", "Danger_dog_fossil", "Montana_Tater_Pig", "Montana_Tater_Pig_fossil", "Dodger_dog", "Dodger_dog_fossil", "Puka_dog", "Puka_dog_fossil", "Reindeer_hot_dog", "Reindeer_hot_dog_fossil", "Rockie_dog", "Rockie_dog_fossil")
+
+my_outgroup   = clade("Dirty-water_dog", "Dirty-water_dog_fossil")
+constraints = [ my_ingroup, my_outgroup ]
+
+
+# Define a stochastic node for the constrained tree topology #
+phylogeny ~ dnConstrainedTopology(tree_dist, constraints=constraints)
+
+# Specify moves on the tree and node times #
+moves.append( mvNarrow(phylogeny, weight=n_taxa) )
+moves.append( mvFNPR(phylogeny, weight=n_taxa/4) )
+moves.append( mvCollapseExpandFossilBranch(phylogeny, extant_mrca, weight=6.0) )
+moves.append( mvNodeTimeSlideUniform(phylogeny, weight=n_taxa) )
+moves.append( mvSubtreeScale(phylogeny, weight=n_taxa/5.0) )

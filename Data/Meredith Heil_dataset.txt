@@ -1,0 +1,327 @@
+Meat type: multistate 0 (beef), 1 (pork), 2 (beef and pork), 3 (caribou)
+Dog type: multistate 0 (frank), 1 (banger), 2 (colored frank), 3 (kielbasa), 4 (brat)
+Dog build: multistate 0 (normal), 1 (skinny), 2 (thick), 3 (mini), 4 (small), 5 (long)
+Casing: multistate 0 (natural), 1 (skinless), 2 (lamb)
+Cooking method: multistate 0 (griddled), 1 (boiled), 2 (deep-fried), 3 (grilled), 4 (steamed), 5 (baked)
+Pre-cooking: multistate 0 (normal), 1 (smoked), 2 (sliced), 3 (stuffed), 4 (wrapped), 5 (battered)
+Post-cooking: multistate 0 (none), 1 (wrapped), 2 (chopped), 3 (popped), 4 (sliced)
+Carb prep: multistate 0 (special), 1 (toasted), 2 (keep it soft), 3 (steamed), 4 (New England), 5 (mini), 6 (grilled), 7 (long)
+Carb: multistate 0 (bun), 1 (pizza), 2 (roll), 3 (bagel), 4 (potato)
+Seeds: multistate 0 (none), 1 (poppy), 2 (sesame), 3 (everything)
+Mustard: multistate 0 (none), 1 (deli), 2 (yellow)
+Ketchup: binary
+BBQ: binary
+Cabbage: multistate 0 (none), 1 (Sauerkraut), 2 (grilled)
+Peppers: multistate 0 (none), 1 (jalapeño), 2 (sport peppers), 3 (peppers)
+Onions: multistate 0 (none), 1 (fried or sauteed), 2 (chopped raw), 3 (grilled)
+Cheese: multistate 0 (none), 1 (topped melted), 2 (stuffed), 3 (topped shredded), 4 (cream cheese), 5 (nacho cheese)
+Bacon: multistate 0 (none), 1 (topped), 2 (stuffed), 3 (wrapped)
+Extra carb: multistate 0 (none), 1 (fried potatoes), 2 (mac n' cheese), 3 (oyster crackers)
+Extra protein: multistate 0 (none), 1 (fish cake), 2 (bologna wrapping), 3 (wrapped kosher salami?), 4 (crab)
+Special seasoning: multistate 0 (none), 1 (celery salt), 2 (Old Bay)
+Relish: multistate 0 (none), 1 (normal sweet), 2 (spicy-sweet), 3 (tropical)
+Beans: binary
+Coleslaw: multistate 0 (none), 1 (vinegar), 2 (creamy or BBQ)
+Pickles: multistate 0 (none), 1 (dill), 2 (kosher dill)
+Scallions: binary
+Tomatoes: binary
+Palta: binary
+Mayo: binary
+Chives: binary
+Meaty condiment: multistate 0 (none), 1 (chili), 2 (meat sauce), 3 (greek sauce), 4 (heart coney sauce), 5 (heart coney dry), 6 (ground beef coney sauce)
+Spicy sauce: multistate 0 (none), 1 (salsa), 2 (hot), 3 (sriracha), 4 (green chile), 5 (spicy secret)
+Special sauce: multistate 0 (none), 1 (red onion sauce), 2 (thousand islands), 3 (sour cream)
+
+Papaya dog (New York City)
+
+    All-beef Sabrett frank in a natural casing, griddled
+    Toasted bun
+    Deli-style mustard
+    Tart sauerkraut
+    Red onion sauce (a mix of onions, tomato paste, and vinegar).
+
+Dirty-water dog (New York City)
+
+    A skinless, all-beef, kosher dog (usually Hebrew National or Sabrett), boiled in a deep tank of questionably sanitary water
+    soft white bun.
+    Spicy, pale yellow, deli-style mustard
+    Red onion mystery sauce (optional)
+
+Italian dog (North Jersey)
+
+    Skinny, all-beef, deep-fried dog
+    Half-round of pizza bread
+    Fried or sauteed onions
+    Greasy red peppers
+    Fried potatoes.
+
+Half-smoke (Washington DC)
+
+    A coarse pork and/or beef banger smoked
+    Traditional soft white bun
+    Tons and tons of chili on top
+
+Texas Tommy (Philadelphia, PA)
+
+    An all-beef dog sliced down the middle and stuffed with Cheez Whiz and crispy bacon, then grilled
+    Toasted bun
+
+NY System wiener (Rhode Island)
+
+    A griddled, all-beef dog in natural casing, garnished with meat sauce, mustard, chopped raw onion, and celery salt and sheathed in a steamed, side-cut roll.
+
+Fenway Frank (Beantown, Mass)
+
+    A fat, boiled & grilled all-beef or beef-and-pork frank
+    New England-style bun
+    Mustard
+    Relish
+    Sometimes Boston baked beans
+
+Philly Combo (The City of Brotherly Love)
+
+    A grilled all-beef hot dog, split down the middle and laid upon a wide steamed or toasted bun, layered with sweet, vinegar-based coleslaw and a stripe of spicy mustard, and completed -- curiously enough -- with a fish cake
+
+Baltimore bologna dog (Baltimore, MD)
+
+    A kosher all-beef dog, wrapped in bologna, griddled, lined with yellow mustard
+    Toasted bun
+
+Ripper (Clifton, NJ (and surrounding areas), 1928)
+
+    A deep-fried pork-and-beef dog in natural casing that tears and crinkles (i.e., "rips") when it's cooked
+    Regular or toasted hot dog bun
+    Mustard and/or spicy-sweet relish
+
+Texas wiener (Paterson, NJ)
+
+    All-beef dog, deep-fried
+    Spicy mustard
+    Chopped raw onion
+    "Greek sauce"... a smooth, chili-like sauce made with ground meat and seasoned with cumin, cinnamon, cloves, allspice, and cayenne
+
+Salami dog (Philly)
+
+    A char-grilled kosher all-beef wrapped in fried kosher salami
+    Toasted bun
+    Mustard
+    Sliced kosher dill pickle
+
+Crab mac n' cheese dog (Baltimore, MD)
+
+    An all-beef hot dog, grilled
+    Soft, chewy bun
+    Lump crab meat
+    Hot, gooey macaroni & cheese
+    Old Bay
+
+Maine Red Snapper (Maine)
+
+    A grilled or griddled, violently red (thanks to food coloring) beef or pork frank in an extra-snappy natural lamb casing
+    Toasted top-loading hot dog roll
+    A spoonful of Maine's own Raye's "Down East Schooner" classic yellow mustard
+
+Michigan Red Hot (Upstate New York)
+
+    An all-beef frank steamed in a natural casing
+    Steamed split-top bun
+    Doused in minced meat chili (no tomatoes, no beans, no problem)
+    Chopped raw onion and mustard
+
+Troy mini hot dog (Upstate New York)
+
+    A tiny hot dog link put out by area butcher shops
+    Specially made 3in bun
+    Spicy meat sauce
+    Yellow mustard
+    Raw onion (generally eaten by the dozen)
+
+Slaw dog/West Virginia dog/Carolina dog (The South)
+
+    An all-beef dog
+    Traditional soft bun
+    Creamy or BBQ homemade coleslaw
+    Meaty chili
+    Raw Vidalia onion
+    Optional yellow mustard
+
+Scrambled dog (Columbus, GA, 50+ years old)
+
+    Chopped hot dog pieces
+    Floating in a bowl
+    Chili
+    Raw onion
+    Pickles
+    Smattering of oyster crackers
+
+Texas dog (Texas)
+
+    A thick frank either grilled or griddled
+    Soft bun
+    Loaded with salsa
+    Shredded Monterey Jack
+    Sliced jalapeños
+    (Occasionally) chili
+
+Memphis dog (Memphis, TN)
+
+    A grilled pork sausage wrapped in bacon
+    Grilled bun
+    Drenched in BBQ sauce
+    Chopped onions
+    Diced scallions
+    Shredded cheddar cheese
+
+Chicago dog (Windy City)
+
+    A classic Vienna Beef frank in natural casing simmered in water until plump or charred to order
+    Steamed poppy seed bun
+    "Dragged through the garden" (i.e., artfully decorated with fresh tomato slices, chopped white onions, sweet neon-green relish, sport peppers, bright-yellow mustard, a dill pickle spear or two, and a few good shakes of celery salt).
+
+Kansas City-style dogs (Kansas City)
+
+    An all-beef dog or pork sausage, griddled
+    Sesame seed bun
+    Melted Swiss cheese
+    Massive dose of sauerkraut
+    (If desired) with a squirt of tangy Thousand Island dressing or spicy mustard
+
+Bagel dog (NYC, Cincinnati & Chicago)
+
+    A regular or mini hot dog
+    Wrapped pigs-in-a-blanket-style in everything or poppy seed bagel dough, then baked in a high-heat oven
+    A side of yellow mustard.
+
+Polish Boy (Cleveland, OH)
+
+    A juicy grilled kielbasa sausage
+    Hefty roll
+    Coleslaw
+    BBQ sauce
+    Hot sauce
+    Steaming-hot pile of fries on top
+
+Francheezie (Broad-shouldered Chicago)
+
+    All-beef, bacon-wrapped dog, split and stuffed with soft Velveeta cheese. Then it's deep-fried
+    Chicago-style poppy seed bun
+    Often (but not always) "dragged through the garden."
+
+Detroit coney (MoTown)
+
+    Small-ish all-beef or beef & pork combo wieners
+    Steamed bun
+    Drenched in coney sauce (a salty, beanless chili made from beef heart and spices)
+    Mustard
+    Chopped raw onion
+    A big handful of shredded cheddar cheese.
+
+Flint-style coney (Vehicle City, MI)
+
+    Small all-beef or beef/pork dog
+    Steamed bun
+    A dry, fine-ground beef heart-based topping.
+
+Jackson-style coney (Jackson, MI (not Jackson, MS))
+
+    A small all-beef or beef/pork dog
+    Thick sauce made from either ground beef or ground beef heart, onions, and spices
+
+Cincinnati cheese coney (Cincy, O-H)
+
+    An all-beef dog
+    Steamed bun
+    A boatload of Cincinnati chili (ground beef and pork blend, cinnamon, allspice, cloves, cocoa powder)
+    Mustard
+    Chopped raw onion
+    Shredded cheddar
+
+Minnesota corn dog (Minnesota State Fair)
+
+    Any kind of skinless hot dog encased in a sweet-and-savory cornmeal batter and deep-fried to golden-brown perfection (also, definitely served on a stick)
+
+Sonoran (Arizona)
+
+    A grilled, bacon-wrapped hot dog popped
+    Hearty, round, steamed bolillo roll
+    Pinto beans
+    Chopped tomatoes
+    Diced raw onion
+    Creamy avocado
+    A blast of mayo
+    A handful of fiery jalapeños
+    Shredded cheese (optional)
+
+Nevada naked dog (Sin City, NV)
+
+    A char-grilled Vienna Beef hot dog
+    Simple bun
+
+Seattle-style dog (Seattle, WA)
+
+    A frank or brat, first grilled, split in half
+    Toasted bun
+    Cream cheese
+    Grilled onions
+    Jalapeños
+    Grilled cabbage
+    Optional additions of Sriracha, BBQ sauce, or salsa
+
+Denver dog (Mile-high Denver, CO)
+
+    A grilled all-beef dog
+    Steamed or toasted bun
+    Flush with chopped red onion
+    Green chili sauce
+    Sour cream
+    Sliced jalapeños
+
+Tijuana dog/danger dog (Los Angeles & San Francisco, CA)
+
+    Unidentified meat wrapped in bacon and deep-fried
+    Soft bun
+    Any number of condiments, including (but not limited to) fried onions, mayo, mustard, ketchup, and grilled jalapeños
+
+Montana Tater Pig/Idaho Super Tuber (Bozeman, MT... though Idaho also claims it for obvious reasons)
+
+    A skinless hot dog baked inside a hollowed-out potato, then split open and stacked high with sour cream, chives, and bacon bits
+
+Dodger Dog (Los Angeles)
+
+    A skinless, foot-long pork hot dog, steamed or grilled
+    A foot-long steamed bun
+    Relish
+    Mustard
+    Ketchup
+    Chopped raw onion
+
+Doyer Dog (Los Ángeles)
+
+    A steamed or grilled, skinless, foot-long pork dog
+    Foot-long bun
+    Smothered in chili
+    Nacho cheese
+    Chopped tomatoes
+    Raw onion
+    Spicy jalapeños
+
+Puka Dog (Honolulu, HI)
+
+    A grilled Polish sausage
+    Large, hollow, toasted bun
+    Mild-to-spicy secret sauces and/or tropical relishes (like guava mustard)
+
+Reindeer hot dog/sausage (Alaska/the North Pole)
+
+    A sausage made of caribou meat
+    Steamed bun
+    Onions that are often sauteed in Coca-Cola
+
+Rockie Dog (State of Colorado)
+
+    A foot-long frank
+    Foot-long bun
+    Grilled peppers
+    Sauerkraut
+    Onions and served in a matching
+    Coors optional
